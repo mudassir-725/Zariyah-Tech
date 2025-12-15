@@ -21,7 +21,7 @@
     max-width: 991px;
     background-color: var(--c-footer-bg);
     color: var(--c-footer-text);
-    padding: 48px 24px;
+    padding: 48px 0;
     padding-bottom: 0;
     user-select: none;
     margin: 0 auto;
@@ -153,6 +153,7 @@
 
 #ZTLLP {
     color: #fff;
+    margin-bottom: 12px;
     /* font-weight: bold; */
     letter-spacing: 2px;
 }

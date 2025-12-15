@@ -163,7 +163,7 @@
 }
 
 /* ========== 📱 Services Section Ordering Fix (< md) ========== */
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 1200px) {
     .services .wel-container {
         flex-direction: column;
     }
@@ -174,5 +174,10 @@
 
     .services .wel2 {
         order: 2;
+    }
+
+    .service-hd {
+        font-size: 28px;
+        padding: 7px;
     }
 }
