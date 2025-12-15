@@ -1,0 +1,311 @@
+/* css/services.css */
+/* ========== 
+   ✅ Services Page Specific Styles 
+========== */
+
+/* ========== 🛠️ Service Hero Modification ========== */
+/* Reuses .hero but reduces height for inner pages */
+.main {
+    padding-top: 100px;
+    /* Less top padding for inner pages */
+}
+
+.hero-service {
+    /* min-height: 60vh; */
+    /* Shorter than home hero */
+    padding-top: 30px;
+    background-image: none;
+    /* Clean background for services */
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.9), rgba(235, 242, 250, 0.5));
+}
+
+.hero-service .hero-content {
+    font-size: 48px;
+    /* Slightly smaller than home */
+    margin-bottom: 24px;
+}
+
+/* 🔹 XSM-: Mobile (768px-) */
+@media screen and (max-width: 768px) {
+    .hero-content {
+        font-size: 32px !important;
+        padding: 0 16px;
+    }
+}
+
+/* === 💠 Capabilities Grid === */
+.capabilities-section {
+    width: 85%;
+    max-width: 1328px;
+    margin: 64px auto;
+}
+
+.cap-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 32px;
+    margin-top: 48px;
+}
+
+/* ========== 
+   ✅ Capabilities Marquee (Infinite Slider) 
+========== */
+
+:root {
+    --marquee-speed: 40s;
+    /* 🐢 Adjust speed: Higher = Slower */
+    --card-width: 350px;
+    /* Fixed width for consistency */
+    --card-gap: 32px;
+}
+
+.capabilities-section {
+    width: 100%;
+    /* Full width to allow sliding */
+    max-width: 100%;
+    margin: 80px 0;
+    overflow: hidden;
+    /* Hide the scrollbar */
+    padding: 20px 0;
+    position: relative;
+}
+
+/* Optional: Fade edges to look like a news ticker */
+.capabilities-section::before,
+.capabilities-section::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    width: 150px;
+    height: 100%;
+    z-index: 2;
+    pointer-events: none;
+    /* Let clicks pass through */
+}
+
+.capabilities-section::before {
+    left: 0;
+    background: linear-gradient(to right, rgba(255, 255, 255, 1), transparent);
+}
+
+.capabilities-section::after {
+    right: 0;
+    background: linear-gradient(to left, rgba(255, 255, 255, 1), transparent);
+}
+
+/* The Sliding Track */
+.cap-track {
+    display: flex;
+    width: max-content;
+    /* Force single line */
+    gap: var(--card-gap);
+    /* Animation is applied via JS/Class to ensure content loads first */
+    animation: marquee-scroll var(--marquee-speed) linear infinite;
+}
+
+@keyframes marquee-scroll {
+    0% {
+        transform: translateX(0);
+    }
+
+    100% {
+        transform: translateX(calc(-50% - (var(--card-gap) / 2)));
+    }
+}
+
+/* === 🖱️ Interaction: Pause & Focus === */
+/* Pause scrolling on hover */
+.cap-track:hover {
+    animation-play-state: paused;
+}
+
+/* Default Card Style in Marquee */
+.feature-card {
+    flex: 0 0 var(--card-width);
+    /* Don't shrink, fixed width */
+    background: rgba(255, 255, 255, 0.65);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.8);
+    border-radius: 12px;
+    padding: 32px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+    border-left: 4px solid var(--c-l-accent);
+    transition: all 0.4s ease;
+    opacity: 0.9;
+    /* Default slightly faded */
+}
+
+/* 💡 Logic: When hovering the track, dim EVERYONE */
+.cap-track:hover .feature-card {
+    opacity: 0.4;
+    filter: blur(1px);
+    transform: scale(0.95);
+}
+
+/* 💡 Logic: But keep the SPECIFIC hovered card bright */
+.cap-track .feature-card:hover {
+    opacity: 1;
+    filter: blur(0);
+    transform: scale(1.05);
+    border-left-color: var(--c-hd-accent);
+    background: #fff;
+    box-shadow: 10px 10px 5px rgba(0, 0, 0, 0.15);
+    z-index: 10;
+}
+
+.cap-track .feature-card:hover .card-title {
+    color: var(--c-hd-accent);
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+    :root {
+        --card-width: 280px;
+        /* Smaller cards on mobile */
+    }
+}
+
+.card-title {
+    font-family: var(--font-accent);
+    font-size: 18px;
+    color: var(--c-h-accent);
+    margin-bottom: 8px;
+}
+
+/* ========== ✅ Outcomes List (Checkmark Style) ============= */
+.about-service {
+    display: flex;
+    flex-direction: column;
+    width: 85%;
+    justify-content: center;
+    max-width: 1328px;
+    min-height: 480px;
+}
+
+.outcomes-grid {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 32px;
+    width: auto;
+    padding: 32px 0;
+    margin: 0 auto;
+}
+
+.outcomes {
+    flex: 1 1 50%;
+    justify-content: center;
+    align-self: center;
+}
+
+@media screen and (max-width: 768px) {
+    .outcomes-grid {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+.outcome-img {
+    max-height: 320px;
+    width: 100%;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.outcomes-list {
+    display: flex;
+    flex-wrap: wrap;
+    list-style: none;
+    gap: 24px;
+    justify-content: center;
+    margin-top: 32px;
+}
+
+.outcomes-list li {
+    font-family: var(--font-accent);
+    font-size: 18px;
+    color: var(--c-h-accent);
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    background: #fff;
+    padding: 12px 24px;
+    border-radius: 50px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+    border: 1px solid var(--c-l-accent);
+    white-space: nowrap;
+    transition: all 0.3s ease-in-out;
+}
+
+.outcomes-list li:hover {
+    background-color: var(--c-h-accent);
+    box-shadow: 10px 10px 5px var(--c-l-accent);
+    color: #fff;
+}
+
+.outcomes-list li::before {
+    content: "✓";
+    font-weight: bold;
+}
+
+/* ========== ❓ FAQ Accordion ============= */
+.faq-section {
+    max-width: 800px;
+    margin: 80px auto;
+    padding: 0 24px;
+}
+
+.faq-container {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.faq-item {
+    border-bottom: 1px solid var(--c-l-accent);
+    padding-bottom: 8px;
+}
+
+.faq-question {
+    width: 100%;
+    text-align: left;
+    background: none;
+    border: none;
+    padding: 16px 0;
+    font-family: var(--font-accent);
+    font-size: 18px;
+    font-weight: 600;
+    color: var(--c-h-accent);
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: color 0.3s ease;
+}
+
+.faq-question:hover {
+    color: var(--c-hd-accent);
+}
+
+.faq-question::after {
+    content: '+';
+    font-size: 24px;
+    transition: transform 0.3s ease;
+}
+
+.faq-item.active .faq-question::after {
+    transform: rotate(45deg);
+}
+
+.faq-answer {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-out;
+    font-family: var(--font-body);
+    color: var(--c-d-accent);
+    line-height: 1.6;
+}
+
+/* .faq-item.active .faq-answer {
+    JS will calculate max-height dynamically
+} */

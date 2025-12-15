@@ -1,0 +1,78 @@
+/* ========== General Reset ========== */
+* {
+    margin: 0;
+    padding: 0;
+    /* color: #000; */
+    text-decoration: none;
+    box-sizing: border-box;
+    /* transition: all 0.3s ease-in-out; */
+}
+
+/*  */
+/* ========== Variables ========== */
+:root {
+
+    /* Colors */
+    --c-t-accent: #F4F3EE; /* Text on Dark BG */
+    --c-l-accent: #ABC1C2; /* Btn, Links */
+    --c-d-accent: #70798C; /* Text, Headers, Footers */
+    --c-s-accent: #EBF2FA; /* Card, BG */
+    --c-h-accent: #1a3a4f; /* Hover, Highlights */
+    --c-hd-accent: #99582a; /* Headers Dark */
+
+    /* Fonts */
+    --font-body: Work Sans;     /* Body Text */
+    --font-note: 'Courier New', cursive; /* Notes, Captions */
+    --font-bot: monospace; /* Bot, Code */
+    --font-line: 'Lucida Handwriting', Impact, Arial Black; /* Handwritten, Fun */
+    --font-accent: 'Space Grotesk', Lora; /* Headers, Links, Btn */
+    --font-logo: Lora, sans-serif; /* Logo, Branding */
+
+    /* Animations / Transitions */
+    --ease-bounce: cubic-bezier(0.68, -0.55, 0.27, 1.55);
+    --ease-standard: cubic-bezier(0.4, 0, 0.2, 1);
+
+}
+
+/* ========== Base Layout ========== */
+html,
+body {
+    font-family: var(--font-body);
+    /* background-color: #FFF; */
+    padding: 0;
+    margin: 0 auto;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+}
+
+.main {
+    margin: 0 auto;
+    padding: 0;
+    padding-top: 160px;
+    max-width: 1328px;
+}
+
+.text{
+    font-family: var(--font-body);
+    color: var(--c-h-accent);
+    font-size: 18px;
+    line-height: 28px;
+    letter-spacing: 0.5px;
+}
+
+.A101 {
+    background-color: #284B63;
+    color: #F4F3EE;
+}
+
+
+
+/* ========== Viewports for Reference ========== */
+
+/* ========== 📱 Responsive Layouts ========== */
+
+/* 🔹 XSM Base: Mobile (<768px)*/
+/* 🔹 SM: Tablets (768px – 991px) */
+/* 🔹 MD: PC (992px – 1199px) */
+/* 🔹 LG: LG PC (1200px – 1900px) */
+/* 🔹 XLG: XLG PC (1901px+) */

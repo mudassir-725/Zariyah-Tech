@@ -1,0 +1,189 @@
+/* ========== 
+   ✅ Effects Component 
+========== */
+
+/* ========== Ripple Effect ========== */
+@keyframes ripple-animation {
+    to {
+        transform: scale(4);
+        opacity: 0;
+    }
+}
+
+.ripple-effect {
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+    user-select: none;
+}
+
+.ripple-effect .ripple {
+    position: absolute;
+    border-radius: 50%;
+    transform: scale(0);
+    opacity: 0.85;
+    pointer-events: none;
+    animation: ripple-animation 1.5s ease-out forwards;
+    background-color: rgb(255, 255, 255);
+    /* default */
+}
+
+.ripple-effect[data-ripple-color="dark"] .ripple {
+    background-color: rgba(0, 0, 0);
+}
+
+.ripple {
+    outline: 2px solid #ccc;
+    /* TEMP: for testing only */
+}
+
+/* ========== Heartbeat Animation ========== */
+@keyframes heartbeat {
+
+    0%,
+    100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.1);
+    }
+}
+
+.heartbeat {
+    display: inline-block;
+    animation: heartbeat 1s ease-in-out infinite;
+}
+
+/* ========== Scroll Reveal Utility ========== */
+.reveal {
+    opacity: 0;
+    transition: opacity 0.7s var(--ease-bounce), transform 0.7s var(--ease-bounce);
+    will-change: opacity, transform;
+}
+
+.reveal.visible {
+    opacity: 1;
+    transform: translate(0, 0);
+}
+
+/* === Directional Animations === */
+.reveal-down {
+    transform: translateY(75px);
+}
+
+.reveal-up {
+    transform: translateY(-75px);
+}
+
+.reveal-left {
+    transform: translateX(-75px);
+}
+
+.reveal-right {
+    transform: translateX(75px);
+}
+
+/* ========== Reusable Bounce Animation Utilities ========== */
+@keyframes bounce-up {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-15px);
+    }
+}
+
+@keyframes bounce-down {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(15px);
+    }
+}
+
+/* === Utility Bounce Animation Classes === */
+.anim-bounce-up {
+    animation: bounce-up 1s ease-in-out infinite;
+}
+
+.anim-bounce-down {
+    animation: bounce-down 1s ease-in-out infinite;
+}
+
+/* ========== Reusable Fade Utilities ========== */
+@keyframes fade-out {
+    0% {
+        opacity: 1;
+        transform: scale(1);
+    }
+
+    100% {
+        opacity: 0;
+        transform: scale(0.5);
+    }
+}
+
+@keyframes fade-in {
+    0% {
+        opacity: 0;
+        transform: scale(0.5);
+    }
+
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* === Utility Fade Animation Classes === */
+.anim-fade-out {
+    animation: fade-out 0.3s ease-in-out forwards;
+}
+
+.anim-fade-in {
+    animation: fade-in 0.3s ease-in-out forwards;
+}
+
+/* ========== FapNav Floating Button ========== */
+#fapNavBtn {
+    position: fixed;
+    bottom: 50px;
+    right: 25px;
+    width: 45px;
+    height: 45px;
+    border: none;
+    background-color: #ededed;
+    border-radius: 50%;
+    box-shadow: 0 0px 25px rgba(0, 0, 0, 0.5);
+    cursor: pointer;
+    z-index: 9999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 5px;
+    user-select: none;
+    transition: background-color 0.3s ease;
+}
+
+#fapNavBtn:hover {
+    background-color: #fff;
+}
+
+#fapNavArrowIcon {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    transition: transform 0.2s ease;
+}
+
+#fapNavBtn:hover img {
+    transform: scale(1.15);
+}
