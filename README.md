@@ -10,8 +10,9 @@ Engineering intelligent solutions for modern businesses, startups, and forward-t
 
 We partner with startups, enterprises, and growing companies to design, build, and scale digital solutions that are practical, secure, and future-ready.
 
-Our work sits at the intersection of **human vision and intelligent technology** — transforming ideas into reliable systems that create measurable impact.
+Our work sits at the intersection of **Data and Intelligent Technology** — transforming ideas into reliable systems that create measurable impact.
 
+![Alt text for the image](./assets/img)
 ---
 
 ## What We Do
