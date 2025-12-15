@@ -21,7 +21,7 @@
     max-width: 991px;
     background-color: var(--c-footer-bg);
     color: var(--c-footer-text);
-    padding: 40px 0;
+    padding: 48px 24px;
     padding-bottom: 0;
     user-select: none;
     margin: 0 auto;
