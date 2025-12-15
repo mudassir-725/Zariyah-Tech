@@ -15,6 +15,8 @@
 }
 
 .footer-section {
+    display: flex;
+    flex-direction: column;
     width: 100%;
     max-width: 991px;
     background-color: var(--c-footer-bg);
@@ -54,23 +56,6 @@
     gap: 32px;
     /* flex: 2 1 500px; */
     justify-content: space-between;
-}
-
-/* ========== 📱 Responsive Layouts ========== */
-@media (max-width: 768px) {
-    .footer-section {
-        width: 85%;
-    }
-
-    .footer-main-grid {
-        display: flex;
-        flex-direction: column;
-        /* align-items: center; */
-    }
-
-    .footer-links-grid {
-        justify-content: space-between;
-    }
 }
 
 /* ========== 📌 Structure: Footer Brand Typo Component ========== */
@@ -130,12 +115,12 @@
 .footer-social-icon {
     width: 24px;
     height: 24px;
-    color: var(--c-l-accent);
+    color: #fff;
     transition: all 0.3s ease-in-out;
 }
 
 .footer-social-icon:hover {
-    color: #fff;
+    color: var(--c-l-accent);
     transform: scale(1.2);
 }
 
@@ -156,9 +141,12 @@
 }
 
 .footer-links-li {
+    display: flex;
+    flex-direction: row;
+    align-self: center;
+    gap: 12px;
     color: var(--c-footer-link);
     text-decoration: none;
-    display: block;
     margin-bottom: 8px;
     transition: color 0.3s ease-in-out;
 }
@@ -184,4 +172,27 @@
     margin-inline: 48px;
     font-size: 14px;
     letter-spacing: 1px;
+}
+
+
+/* ========== 📱 Responsive Layouts ========== */
+@media (max-width: 768px) {
+    .footer-section {
+        width: 85%;
+    }
+
+    .footer-main-grid {
+        display: flex;
+        flex-direction: column;
+        /* align-items: center; */
+    }
+
+    .footer-links-grid {
+        justify-content: space-between;
+    }
+
+    .footer-brand-txt {
+        font-weight: 700;
+        font-size: 24px;
+    }
 }

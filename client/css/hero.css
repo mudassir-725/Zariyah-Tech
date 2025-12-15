@@ -37,12 +37,6 @@
     z-index: 1;
 }
 
-@media (min-width: 1400px) {
-    .hero {
-        background-size: 1200px 1200px;
-    }
-}
-
 /* === 🖼️ Hero Context Section === */
 .hero-title {
     color: var(--c-hd-accent);
@@ -64,13 +58,6 @@
     color: var(--c-d-accent);
     text-transform: uppercase;
     letter-spacing: 3px;
-}
-
-/* 🔹 XSM-: Mobile (768px-) */
-@media screen and (max-width: 768px) {
-    .hero-content {
-        font-size: 36px;
-    }
 }
 
 .hero-subtitle {
@@ -172,9 +159,17 @@
     }
 }
 
-@media (min-width: 769px) and (max-width: 1200px) {
+/* 🔹 SM-MD: Tablets (768px-) */
+@media (min-width: 769px) and (max-width: 991px) {
     .hero-content {
         font-size: 48px;
+    }
+}
+
+/* 🔹 XSM-: Mobile (768px-) */
+@media screen and (max-width: 768px) {
+    .hero-content {
+        font-size: 36px;
     }
 }
 
