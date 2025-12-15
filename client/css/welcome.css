@@ -1,34 +1,38 @@
+/* 101 */
 /* ========== 
    ✅ Welcome Component 
 ========== */
 
-/* ========== 📦 Layout: Welcome Container ========== */
+/* ========== 📦 Welcome / Services Container ========== */
 .wel-container {
     display: flex;
-    flex-wrap: wrap;
     justify-content: center;
-    gap: 16px;
+    /* ← horizontal centering */
+    align-items: center;
+    gap: 32px;
+
     width: 100%;
-    margin: 0 auto;
+    /* margin: 0; */
     padding: 16px;
     user-select: none;
 }
 
-/* ========== 🧱 Structure: Welcome Panels (Left & Right) ========== */
+/* ========== 🧱 Structure: Welcome Panels ========== */
 .wel1,
 .wel2 {
-    flex: 1 45%;
-    /* flex: 1 1 100%; */
+
+    flex: 0 1 560px;
+    /* ← predictable width */
+    max-width: 560px;
+    margin-inline: auto;
+
     display: flex;
     flex-direction: column;
     justify-content: center;
+
     padding: 20px;
     border-radius: 7px;
-    height: auto;
-    max-width: 680px;
     font-size: 16px;
-    /* border: 1px solid #ddd; */
-    transition: transform 0.3s ease-in-out;
 }
 
 /* === 🖱️ Interaction: Hover Scaling === */
@@ -36,9 +40,8 @@
 .ser-img {
     width: 100%;
     border-radius: 8px;
-    border: none;
     box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
-    transition: all 0.3s ease-in-out;
+    transition: transform 0.3s ease-in-out;
 }
 
 .welcomevideo:hover,
@@ -46,7 +49,7 @@
     transform: scale(1.025);
 }
 
-/* ========== 📄 Structure: Welcom Title Text ========== */
+/* ========== 📄 Titles ========== */
 .wel2-title,
 .ser-title {
     font-size: 32px;
@@ -61,98 +64,47 @@
     text-align: center;
     color: var(--c-h-accent);
     margin-bottom: 20px;
+    padding: 7px;
 }
 
-/* === 📄 Structure: Main Body Text === */
+/* ========== 📄 Body Text ========== */
 .wel2-text,
 .ser-para {
     font-family: var(--font-body);
     color: var(--c-h-accent);
     font-size: 18px;
     line-height: 28px;
-    letter-spacing: 0.5px;
+    letter-spacing: 1px;
+    padding: 7px;
 }
 
-/* ========== 📱 Responsive Layouts ========== */
-
-/* 🔹 XSM Base: Mobile; Stack (<768px)*/
-@media screen and (max-width: 768px) {
-    .wel-container {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .wel1,
-    .wel2 {
-        flex: 1 1 100%;
-        width: 100%;
-        height: auto;
-    }
-
-    .wel2-title {
-        font-size: 24px;
-        padding: 7px;
-    }
-
-    .wel2-text {
-        font-size: 14px;
-        padding: 7px;
-    }
-}
-
-/* 🔹 SM: Tablets; Stack (768px – 991px) */
-@media screen and (min-width: 768px) and (max-width: 991px) {
-    .wel-container {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .wel1,
-    .wel2 {
-        flex: 1 1 100%;
-        width: 100%;
-        height: auto;
-        /* Makes card height adaptive on small screens */
-    }
-
-    .wel2-title {
-        font-size: 28px;
-        padding: 7px;
-    }
-
-    .wel2-text {
-        font-size: 16px;
-        font-family: "Work Sans";
-        padding: 7px;
-    }
-}
-
-/* ===== Specific Stylings for the Services Section */
+/* ===== Services Header ===== */
 .service-hd {
     font-size: 36px;
     font-family: var(--font-accent);
     color: var(--c-hd-accent);
     font-weight: bold;
     text-align: center;
+    padding: 7px;
     margin-bottom: 20px;
 }
 
+/* ===== CTA ===== */
 .ser-cta {
-    display: flex;
+    display: inline-flex;
     justify-content: center;
 
-    font-weight: bold;
     font-family: var(--font-accent);
+    font-weight: bold;
+    letter-spacing: 2px;
+
+    margin: 32px auto 0;
+    padding: 12px 24px;
 
     color: var(--c-h-accent);
-    background-color: var(--c-l-accent);
-    box-shadow: 10px 10px 5px var(--c-h-accent);
+    background: var(--c-l-accent);
     border-radius: 8px;
-
-    margin: 0 auto;
-    margin-top: 32px;
-    padding: 12px 24px;
-    letter-spacing: 2px;
+    box-shadow: 10px 10px 5px var(--c-h-accent);
     transition: all 0.3s ease-in-out;
 }
 
@@ -162,10 +114,19 @@
     color: var(--c-t-accent);
 }
 
-/* ========== 📱 Services Section Ordering Fix (< md) ========== */
-@media screen and (max-width: 1200px) {
-    .services .wel-container {
+/* ========== 📱 Responsive Layouts ========== */
+
+/* Stack & center (< md) */
+@media (max-width: 991px) {
+    .wel-container {
         flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .wel1,
+    .wel2 {
+        max-width: 720px;
     }
 
     .services .wel1 {
@@ -178,6 +139,30 @@
 
     .service-hd {
         font-size: 28px;
-        padding: 7px;
+    }
+
+    .wel2-title {
+        font-size: 28px;
+    }
+
+    .wel2-text {
+        font-size: 16px;
+    }
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+
+    .wel1,
+    .wel2 {
+        width: 85%;
+    }
+
+    .wel2-title {
+        font-size: 24px;
+    }
+
+    .wel2-text {
+        font-size: 14px;
     }
 }
