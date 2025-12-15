@@ -1,4 +1,4 @@
-# Zariyah Tech ⚡
+# Zariyah Tech
 
 Engineering intelligent solutions for modern businesses, startups, and forward-thinking organizations.
 
