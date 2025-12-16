@@ -1,44 +1,34 @@
-/* 3000 */
 /* ========== 
    ✅ Welcome Component 
 ========== */
 
-/* ========== 📦 Layout: Welcome Container ========== */
-/* Full-bleed section fix */
-#welcome,
+/* ========== 📦 Layout: Welcome Stylings ========== */
+/* === Full-bleed section fix === */
+/* #welcome, */
 .services {
     position: relative;
-    left: 50%;
-    margin-left: -50vw;
     width: 100%;
 }
 
-/* ===== Centering rail (matches .main) ===== */
-.section-inner {
-    max-width: 1200px;
-    /* ← single source of truth */
-    margin: 0 auto;
-    padding: 0 16px;
-}
-
+/* === 🧱 Structure: Welcome Containers === */
 .wel-container {
     display: flex;
     align-items: center;
     justify-content: center;
     flex-wrap: wrap;
     /* ✅ MISSING */
-    gap: 32px;
+    gap: 48px;
 
     width: 100%;
     /* ⬅️ KEY */
-    /* max-width: 1200px; */
-    margin: 0;
+    max-width: 1500px;
+    margin: 24px auto 0;
     padding: 16px;
     user-select: none;
     transition: all 0.3s ease-in-out;
 }
 
-/* ========== 🧱 Structure: Welcome Panels (Left & Right) ========== */
+/* === 🧱 Structure: Welcome Panels (Left & Right) === */
 .wel1,
 .wel2 {
     display: flex;
@@ -46,10 +36,11 @@
     justify-content: center;
     font-size: 16px;
 
-    flex: 0 1 320px;
+    flex: 0 1 auto;
     /* width: 100%; */
     max-width: 560px;
     margin-inline: auto;
+    justify-content: space-between;
 
     padding: 20px;
     border-radius: 7px;
@@ -85,8 +76,6 @@
 .ser-title {
     text-align: center;
     color: var(--c-h-accent);
-    margin-bottom: 20px;
-    padding: 7px;
 }
 
 /* === 📄 Structure: Main Body Text === */
@@ -97,30 +86,28 @@
     font-size: 18px;
     line-height: 28px;
     letter-spacing: 1px;
-    padding: 7px;
 }
 
-/* ===== Specific Stylings for the Services Section */
+/* ========== Specific Stylings for the Services Section ========== */
 .service-hd {
     font-size: 36px;
     font-family: var(--font-accent);
     color: var(--c-hd-accent);
     font-weight: bold;
     text-align: center;
-    padding: 7px;
     margin-bottom: 20px;
 }
 
-.ser-cta {
+.ser-cta,
+.hero-cta {
     display: inline-flex;
     justify-content: center;
-
 
     font-family: var(--font-accent);
     font-weight: bold;
     letter-spacing: 2px;
 
-    margin: 32px auto 0;
+    margin: 32px auto;
     padding: 12px 24px;
 
     color: var(--c-h-accent);
@@ -130,7 +117,8 @@
     transition: all 0.3s ease-in-out;
 }
 
-.ser-cta:hover {
+.ser-cta:hover,
+.hero-cta:hover {
     background-color: var(--c-h-accent);
     box-shadow: 10px 10px 5px var(--c-l-accent);
     color: var(--c-t-accent);
@@ -146,29 +134,12 @@
         text-align: center;
     }
 
-    .wel1,
-    .wel2 {
-        max-width: 720px;
-    }
-
-    .services .wel1 {
-        order: 1;
-    }
-
-    .services .wel2 {
-        order: 2;
-    }
-
     .service-hd {
         font-size: 28px;
     }
 
     .wel2-title {
         font-size: 28px;
-    }
-
-    .wel2-text {
-        font-size: 16px;
     }
 }
 
@@ -183,8 +154,15 @@
     .wel2-title {
         font-size: 24px;
     }
+}
 
-    .wel2-text {
-        font-size: 14px;
+/* 🔹 Order Base:  (<1200px)*/
+@media screen and (max-width: 1200px) {
+    .services .wel1 {
+        order: 1;
+    }
+
+    .services .wel2 {
+        order: 2;
     }
 }

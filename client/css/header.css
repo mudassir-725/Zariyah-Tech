@@ -1,11 +1,12 @@
 /* ==========
-   ✅ Header Component
+✅ Header Component
 ========== */
 
 /* ========== 🌐 Layout & Base Styles ========== */
 .navbar {
     position: fixed;
     top: 0;
+    /* left: 0; */
     width: 100vw;
     justify-content: center;
     text-align: center;
@@ -20,6 +21,13 @@
     box-shadow: 0 7px 7px rgba(0, 0, 0, 0.3);
     user-select: none;
     transition: all 0.2s ease-in-out, width 0s ease-in-out;
+}
+
+/* NavBar Position fixed for larger screens */
+@media screen and (min-width: 2048px) {
+    .navbar {
+        position: sticky;
+    }
 }
 
 .navbar-container {

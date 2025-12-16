@@ -4,6 +4,7 @@
 
 /* ========== 🌐 Hero Container Layout ========== */
 .hero {
+    position: relative;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -15,20 +16,16 @@
     background-size: auto;
     background-position: center;
 
+    overflow: hidden;
     margin: 0 auto;
     user-select: none;
-}
-
-.hero {
-    position: relative;
-    overflow: hidden;
 }
 
 .hero::before {
     content: "";
     position: absolute;
     inset: 0;
-    background: rgba(255, 255, 255, 0.75);
+    background: rgba(255, 255, 255, 0.70);
     z-index: 0;
 }
 
@@ -68,25 +65,6 @@
     padding: 24px 0;
     padding: 24px;
     letter-spacing: 1px;
-}
-
-.hero-cta {
-    font-size: 18px;
-    font-family: var(--font-accent);
-    color: var(--c-h-accent);
-    background-color: var(--c-l-accent);
-    box-shadow: 10px 10px 5px var(--c-h-accent);
-    border-radius: 8px;
-    margin: 48px 0;
-    padding: 12px 24px;
-    letter-spacing: 2px;
-    transition: all 0.5s ease-in-out;
-}
-
-.hero-cta:hover {
-    background-color: var(--c-h-accent);
-    box-shadow: 10px 10px 5px var(--c-l-accent);
-    color: var(--c-t-accent);
 }
 
 /* === Hero Tag Shimmer Loader (Sequential) === */
@@ -152,11 +130,6 @@
     .hero-subtitle {
         font-size: 14px;
     }
-
-    .hero-cta {
-        font-size: 14px;
-        padding: 10px 20px;
-    }
 }
 
 /* 🔹 SM-MD: Tablets (768px-) */
@@ -188,12 +161,13 @@
 .about-title {
     font-family: var(--font-accent);
     color: var(--c-hd-accent);
-    font-size: 28px;
+    font-size: 32px;
     font-weight: bold;
     letter-spacing: 1px;
 }
 
 .about-para {
+    max-width: 1200px;
     font-family: var(--font-body);
     color: var(--c-h-accent);
     font-size: 20px;

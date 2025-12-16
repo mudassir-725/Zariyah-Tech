@@ -5,18 +5,36 @@
 
 /* ========== 🛠️ Service Hero Modification ========== */
 /* Reuses .hero but reduces height for inner pages */
+/* ========== Base Layout ========== */
+html,
+body {
+    font-family: var(--font-body);
+    /* background-color: #FFF; */
+    padding: 0;
+    margin: 0 auto;
+    /* overflow-x: hidden; */
+    max-width: 2048px;
+    scroll-behavior: smooth;
+}
+
 .main {
-    padding-top: 100px;
+    padding-top: 160px;
     /* Less top padding for inner pages */
 }
 
 .hero-service {
-    /* min-height: 60vh; */
     /* Shorter than home hero */
     padding-top: 30px;
     background-image: none;
     /* Clean background for services */
     background: linear-gradient(135deg, rgba(255, 255, 255, 0.9), rgba(235, 242, 250, 0.5));
+}
+
+/* Hero Section Position fixed for larger screens */
+@media screen and (max-width: 2048px) {
+    .hero-service {
+        height: 60vh;
+    }
 }
 
 .hero-service .hero-content {
