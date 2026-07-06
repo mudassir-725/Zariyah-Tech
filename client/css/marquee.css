@@ -1,0 +1,142 @@
+/* =========================================================
+   Reusable horizontal marquee
+========================================================= */
+.why-section {
+  overflow: hidden;
+  background: linear-gradient(180deg, #f8fafb, #eef4f7);
+}
+
+.marquee {
+  position: relative;
+  width: min(100vw, 1600px);
+  margin-inline: auto;
+  overflow: hidden;
+  padding-block: 18px 34px;
+}
+
+.marquee::before,
+.marquee::after {
+  content: "";
+  position: absolute;
+  z-index: 3;
+  top: 0;
+  bottom: 0;
+  width: clamp(38px, 8vw, 130px);
+  pointer-events: none;
+}
+
+.marquee::before {
+  left: 0;
+  background: linear-gradient(90deg, #eef4f7, transparent);
+}
+
+.marquee::after {
+  right: 0;
+  background: linear-gradient(-90deg, #eef4f7, transparent);
+}
+
+.marquee-track {
+  --marquee-gap: 22px;
+  --marquee-time: 46s;
+  display: flex;
+  width: max-content;
+  gap: var(--marquee-gap);
+  animation: marquee-slide var(--marquee-time) linear infinite;
+}
+
+.marquee:hover .marquee-track,
+.marquee:focus-within .marquee-track {
+  animation-play-state: paused;
+}
+
+.marquee-card {
+  flex: 0 0 clamp(280px, 28vw, 350px);
+  min-height: 220px;
+  border: 1px solid rgba(26, 58, 79, 0.1);
+  border-left: 4px solid var(--sage);
+  border-radius: 20px;
+  padding: 28px;
+  background: rgba(255, 255, 255, 0.82);
+  box-shadow: 0 14px 38px rgba(16, 44, 62, 0.07);
+  backdrop-filter: blur(12px);
+  transition:
+    transform 220ms var(--ease),
+    border-color 220ms var(--ease),
+    box-shadow 220ms var(--ease),
+    opacity 220ms var(--ease);
+}
+
+.marquee-track:hover .marquee-card {
+  opacity: 0.58;
+}
+
+.marquee-track .marquee-card:hover {
+  z-index: 2;
+  opacity: 1;
+  transform: translateY(-8px);
+  border-left-color: var(--bronze);
+  box-shadow: var(--shadow-md);
+}
+
+.marquee-card > span {
+  display: block;
+  margin-bottom: 22px;
+  color: var(--bronze);
+  font-family: var(--font-heading);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+}
+
+.marquee-card h3 {
+  color: var(--ink);
+  font-family: var(--font-heading);
+  font-size: 19px;
+  line-height: 1.25;
+}
+
+.marquee-card p {
+  margin-top: 12px;
+  color: rgba(26, 58, 79, 0.68);
+  font-size: 14px;
+  line-height: 1.7;
+}
+
+@keyframes marquee-slide {
+  to {
+    transform: translateX(calc(-50% - (var(--marquee-gap) / 2)));
+  }
+}
+
+@media (max-width: 700px) {
+  .marquee {
+    margin-inline: -16px;
+    width: calc(100% + 32px);
+  }
+
+  .marquee-track {
+    --marquee-time: 38s;
+  }
+
+  .marquee-card {
+    flex-basis: 278px;
+    min-height: 205px;
+    padding: 24px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .marquee {
+    overflow-x: auto;
+    scrollbar-width: thin;
+  }
+
+  .marquee::before,
+  .marquee::after {
+    display: none;
+  }
+
+  .marquee-track {
+    animation: none;
+  }
+}

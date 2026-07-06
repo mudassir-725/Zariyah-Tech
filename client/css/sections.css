@@ -1,0 +1,124 @@
+/* =========================================================
+   Reusable section heading and outcome utilities
+========================================================= */
+.page-section,
+.faq-section {
+  width: 100%;
+  padding: clamp(76px, 9vw, 124px) 20px;
+}
+
+.section-heading {
+  width: min(100%, 780px);
+  margin: 0 auto clamp(38px, 5vw, 64px);
+  text-align: center;
+}
+
+.section-kicker {
+  margin-bottom: 12px;
+  color: var(--bronze);
+  font-family: var(--font-heading);
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.section-title {
+  color: var(--ink);
+  font-family: var(--font-heading);
+  font-size: clamp(30px, 4vw, 52px);
+  font-weight: 650;
+  letter-spacing: -0.035em;
+  line-height: 1.1;
+}
+
+.section-copy {
+  width: min(100%, 690px);
+  margin: 18px auto 0;
+  color: rgba(26, 58, 79, 0.7);
+  font-size: clamp(15px, 1.2vw, 18px);
+  line-height: 1.75;
+}
+
+.section-heading-light .section-kicker {
+  color: #d8b99f;
+}
+
+.section-heading-light .section-title,
+.section-heading-light .section-copy {
+  color: var(--white);
+}
+
+.section-heading-light .section-copy {
+  color: rgba(255, 255, 255, 0.72);
+}
+
+.outcomes-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 26px;
+}
+
+.outcomes-list li {
+  display: inline-flex;
+  min-height: 40px;
+  align-items: center;
+  gap: 9px;
+  border: 1px solid rgba(26, 58, 79, 0.12);
+  border-radius: 999px;
+  padding: 8px 14px;
+  color: rgba(26, 58, 79, 0.82);
+  background: rgba(255, 255, 255, 0.76);
+  font-family: var(--font-heading);
+  font-size: 13px;
+  font-weight: 600;
+  box-shadow: 0 6px 16px rgba(16, 44, 62, 0.05);
+  transition:
+    transform 180ms var(--ease),
+    color 180ms var(--ease),
+    background-color 180ms var(--ease),
+    border-color 180ms var(--ease);
+}
+
+.outcomes-list li::before {
+  content: "✓";
+  color: var(--bronze);
+  font-weight: 800;
+}
+
+.outcomes-list li:hover {
+  transform: translateY(-2px);
+  border-color: var(--ink);
+  color: var(--white);
+  background: var(--ink);
+}
+
+.outcomes-list li:hover::before {
+  color: var(--white);
+}
+
+@media (max-width: 700px) {
+  .page-section,
+  .faq-section {
+    padding: 68px 16px;
+  }
+
+  .section-heading {
+    margin-bottom: 36px;
+  }
+
+  .section-title {
+    font-size: clamp(28px, 9vw, 38px);
+  }
+
+  .outcomes-list {
+    gap: 8px;
+  }
+
+  .outcomes-list li {
+    min-height: 38px;
+    padding-inline: 12px;
+    font-size: 12px;
+  }
+}

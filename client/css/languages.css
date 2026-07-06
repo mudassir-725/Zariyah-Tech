@@ -1,0 +1,70 @@
+/* =========================================================
+   Language coverage
+========================================================= */
+.language-section {
+  background: #f7fafb;
+}
+
+.language-panel {
+  position: relative;
+  isolation: isolate;
+  width: min(100%, 1120px);
+  margin-inline: auto;
+  overflow: hidden;
+  border-radius: 30px;
+  padding: clamp(46px, 7vw, 82px);
+  background:
+    linear-gradient(135deg, rgba(16, 44, 62, 0.95), rgba(14, 31, 42, 0.9)),
+    /* url("../assets/img/page/mission101.webp") center / cover; */
+    url("../assets/img/fall.webp") center / cover;
+  box-shadow: var(--shadow-md);
+}
+
+.language-panel::after {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  right: -100px;
+  bottom: -120px;
+  width: 340px;
+  height: 340px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 50%;
+  box-shadow: 0 0 0 56px rgba(255, 255, 255, 0.03);
+}
+
+.language-panel .section-heading {
+  margin-bottom: 34px;
+}
+
+.language-list {
+  justify-content: center;
+}
+
+.language-list li {
+  border-color: rgba(255, 255, 255, 0.18);
+  color: rgba(255, 255, 255, 0.88);
+  background: rgba(255, 255, 255, 0.08);
+  box-shadow: none;
+}
+
+.language-list li::before {
+  color: #d8b99f;
+}
+
+.language-list li:hover {
+  border-color: rgba(255, 255, 255, 0.54);
+  color: var(--ink);
+  background: var(--white);
+}
+
+.language-list li:hover::before {
+  color: var(--bronze);
+}
+
+@media (max-width: 600px) {
+  .language-panel {
+    border-radius: 22px;
+    padding: 42px 20px;
+  }
+}

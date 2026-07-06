@@ -1,0 +1,207 @@
+/* =========================================================
+   Foundation: tokens, reset, page layout, and shared controls
+========================================================= */
+:root {
+  --ink: #1a3a4f;
+  --ink-deep: #102c3e;
+  --bronze: #99582a;
+  --mist: #ebf2fa;
+  --sage: #abc1c2;
+  --sand: #f4f3ee;
+  --slate: #70798c;
+  --white: #ffffff;
+  --line: rgba(26, 58, 79, 0.12);
+  --surface: rgba(255, 255, 255, 0.78);
+  --shadow-sm: 0 10px 30px rgba(16, 44, 62, 0.08);
+  --shadow-md: 0 22px 60px rgba(16, 44, 62, 0.14);
+  --font-body: "Work Sans", sans-serif;
+  --font-heading: "Space Grotesk", sans-serif;
+  --font-brand: "Lora", serif;
+  --ease: cubic-bezier(0.4, 0, 0.2, 1);
+  --page-width: 1280px;
+  /* Legacy aliases retained for the unchanged footer and older pages. */
+  --c-h-accent: var(--ink);
+  --c-l-accent: var(--sage);
+  --c-footer-bg: var(--ink);
+  --c-footer-text: var(--white);
+  --c-footer-link: var(--sand);
+  --nav-height: 82px;
+  --nav-height-scrolled: 56px;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: calc(var(--nav-height) + 18px);
+}
+
+body {
+  min-width: 320px;
+  margin: 0;
+  overflow-x: hidden;
+  color: var(--ink);
+  background: var(--white);
+  font-family: var(--font-body);
+  line-height: 1.6;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+}
+
+body.menu-open,
+body.dialog-open,
+body.auth-open,
+body.pricing-open {
+  overflow: hidden;
+}
+
+img,
+video,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+button,
+a,
+input,
+textarea,
+select {
+  font: inherit;
+}
+
+button,
+a {
+  -webkit-tap-highlight-color: transparent;
+}
+
+button {
+  border: 0;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+ul,
+ol {
+  list-style: none;
+}
+
+.main {
+  padding-top: var(--nav-height);
+}
+
+.button {
+  position: relative;
+  display: inline-flex;
+  min-height: 48px;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  overflow: hidden;
+  border: 1px solid transparent;
+  border-radius: 999px;
+  padding: 12px 22px;
+  cursor: pointer;
+  font-family: var(--font-heading);
+  font-size: 15px;
+  font-weight: 650;
+  letter-spacing: 0.02em;
+  transition:
+    transform 180ms var(--ease),
+    background-color 180ms var(--ease),
+    border-color 180ms var(--ease),
+    box-shadow 180ms var(--ease),
+    color 180ms var(--ease);
+}
+
+.button:hover {
+  transform: translateY(-2px);
+}
+
+.button:focus-visible,
+.nav-link:focus-visible,
+.nav-toggle:focus-visible,
+.service-link:focus-visible,
+.faq-question:focus-visible,
+.dialog-close:focus-visible,
+.auth-close:focus-visible,
+.auth-tab:focus-visible,
+.auth-link:focus-visible,
+.provider-chip:focus-visible,
+.password-toggle:focus-visible,
+.pricing-close:focus-visible,
+.price-action:focus-visible,
+.notice-close:focus-visible {
+  outline: 3px solid rgba(153, 88, 42, 0.34);
+  outline-offset: 4px;
+}
+
+.button-primary {
+  color: var(--white);
+  background: var(--ink);
+  box-shadow: 0 12px 28px rgba(26, 58, 79, 0.2);
+}
+
+.button-primary:hover {
+  background: var(--ink-deep);
+  box-shadow: 0 16px 34px rgba(26, 58, 79, 0.26);
+}
+
+.button-ghost {
+  color: var(--ink);
+  border-color: rgba(26, 58, 79, 0.32);
+  background: rgba(255, 255, 255, 0.58);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+.button-ghost:hover {
+  border-color: var(--ink);
+  background: rgba(255, 255, 255, 0.88);
+}
+
+.protect {
+  user-select: none;
+  -webkit-user-drag: none;
+}
+
+.price-chip,
+.provider-chip {
+  user-select: none;
+}
+
+@media (max-width: 700px) {
+  :root {
+    --nav-height: 72px;
+  }
+
+  .button {
+    min-height: 46px;
+    padding-inline: 18px;
+    font-size: 14px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
