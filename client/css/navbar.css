@@ -136,14 +136,11 @@
   font-size: 14px;
   font-weight: 650;
   box-shadow: 0 10px 24px rgba(26, 58, 79, 0.18);
-  transition:
-    transform 180ms var(--ease),
-    background-color 180ms var(--ease);
+  transition: all 0.3s ease-in-out;
 }
 
 .nav-cta:hover {
-  transform: translateY(-2px);
-  background: var(--ink-deep);
+  box-shadow: 2px 2px 16px rgba(26, 58, 79, 0.7);
 }
 
 .nav-toggle {
@@ -202,6 +199,7 @@
 }
 
 @media (max-width: 900px) {
+
   .navbar,
   .navbar.scrolled {
     height: var(--nav-height);

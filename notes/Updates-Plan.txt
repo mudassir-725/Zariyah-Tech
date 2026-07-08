@@ -1,0 +1,116 @@
+Updates Plan
+(We have created this Updates Plan at the very back, at the beginning; Check the "complete-v2-plan.txt" for the updated and complete V2 implementation plan.)
+________________________________________
+V2: Authentication and user profiles
+This is the correct time to introduce the application foundation.
+Recommended architecture
+•	Frontend: Next.js with TypeScript 
+•	Primary database: PostgreSQL 
+•	Data access: Prisma
+•	Auth: Mature authentication library with Google and Apple OAuth 
+•	Browser session: Secure HTTP-only cookies 
+•	API style: REST initially 
+•	Backend shape: Modular monolith 
+
+Why PostgreSQL over MongoDB
+The future data is strongly relational:
+Users
+Organizations
+Memberships
+Projects
+Datasets
+Tasks
+Annotations
+Reviews
+FAQs
+Conversations
+Audit logs
+PostgreSQL also provides JSON support for flexible annotation configurations.
+MongoDB is not wrong, but it should not be selected merely because annotation data “looks dynamic.” That is how databases become personality choices instead of engineering decisions.
+Authentication warning
+Do not manually store JWTs in localStorage.
+Prefer:
+•	Secure HTTP-only cookies 
+•	Short-lived tokens 
+•	Refresh-token rotation where required 
+•	CSRF protection 
+•	OAuth account linking 
+•	Email verification 
+•	Password reset 
+•	Rate limiting 
+Plan roles from V2:
+Client
+Admin
+Project Manager
+Annotator
+Reviewer
+Even if only Client and Admin are initially enabled.
+________________________________________
+V3: Dashboard and dynamic content
+Core modules:
+•	User dashboard 
+•	Profile management 
+•	Organization management 
+•	Projects 
+•	Project enquiries 
+•	Notifications 
+•	Dynamic FAQ management 
+•	Admin sidebar 
+•	Role-based access control 
+•	Activity and audit history 
+Dynamic FAQs should live in the database and be manageable through an admin interface instead of being hardcoded into every page.
+________________________________________
+V4: Chatbot and assistance
+The assistant should begin with controlled use cases:
+•	Explain services 
+•	Recommend an annotation workflow 
+•	Answer FAQs 
+•	Help users prepare project requirements 
+•	Summarize project status for authenticated users 
+•	Escalate to human support 
+Recommended foundation:
+•	Retrieval over approved company content 
+•	Conversation history 
+•	Source-aware responses 
+•	User and organization access boundaries 
+•	Rate limits 
+•	Feedback controls 
+•	Audit logs 
+For vector search, PostgreSQL with a vector extension can initially avoid adding another database.
+________________________________________
+V5: User Workspaces
+For the “Google Colab-like dynamic flow,” first define the operational model:
+Organization
+→ Project
+→ Dataset
+→ Asset
+→ Annotation Task
+→ Annotation
+→ Review
+→ Approval
+→ Export
+Likely infrastructure:
+•	PostgreSQL for metadata and workflow state 
+•	S3-compatible object storage for images, audio, video, and documents 
+•	Redis and a queue for background jobs 
+•	WebSockets or server-sent events for live progress 
+•	Dataset versioning 
+•	Autosave 
+•	Review and approval workflow 
+•	Import and export pipelines 
+•	Audit trails 
+•	Fine-grained permissions 
+This should be an annotation workspace, not literally a code notebook unless executing user code is an actual business requirement. Those are dramatically different security problems.
+________________________________________
+ Final Direction
+The roadmap is solid, with one adjustment:
+V0.5  Static visual prototype
+V1    Accurate content + stability + performance
+V1.7  Unified immersive website
+V2    Identity, organizations, profiles and auth
+V3    Dashboard, projects, FAQs and administration
+V4    Context-aware assistant
+V5    Dataset and annotation workspace
+MVP   Production hardening and validated core workflows
+The correct immediate move is V1 only:
+
