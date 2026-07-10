@@ -6,11 +6,9 @@
   overflow: hidden;
   color: rgba(255, 255, 255, 0.78);
   background:
-    radial-gradient(
-      circle at 15% 10%,
+    radial-gradient(circle at 15% 10%,
       rgba(171, 193, 194, 0.14),
-      transparent 28%
-    ),
+      transparent 28%),
     radial-gradient(circle at 85% 0%, rgba(153, 88, 42, 0.14), transparent 24%),
     #071821;
   flex-direction: column;
@@ -97,6 +95,7 @@
   border: 1px solid rgba(255, 255, 255, 0.2);
   color: var(--white);
   background: rgba(255, 255, 255, 0.04);
+  padding: 10px 24px;
 }
 
 .footer-cta:hover,
@@ -243,11 +242,13 @@
   width: 15px;
   height: 15px;
 }
+
 @media (min-width: 1200px) {
   .footer-bottom {
     flex-direction: row;
   }
 }
+
 @media (max-width: 1080px) {
   .footer-top {
     grid-template-columns: minmax(260px, 1.2fr) repeat(2, minmax(150px, 0.8fr));
