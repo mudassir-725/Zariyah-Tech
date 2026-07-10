@@ -11,11 +11,10 @@
   inset: 0 0 auto;
   z-index: 1000;
   height: var(--nav-height);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.54);
-  background: rgba(250, 252, 253, 0.72);
-  box-shadow: 0 10px 34px rgba(16, 44, 62, 0.08);
-  backdrop-filter: blur(7px) saturate(145%);
-  -webkit-backdrop-filter: blur(18px) saturate(145%);
+  background: rgba(250, 252, 253, 0.25);
+  box-shadow: 0 24px 34px rgba(16, 44, 62, 0.08);
+  backdrop-filter: blur(8px) saturate(145%);
+  -webkit-backdrop-filter: blur(8px) saturate(145%);
   transition:
     height 0.3s ease-in-out,
     background-color 220ms var(--ease),
@@ -24,8 +23,8 @@
 
 .navbar.scrolled {
   height: var(--nav-height-scrolled);
-  background: rgba(250, 252, 253, 0.9);
-  box-shadow: 0 12px 36px rgba(16, 44, 62, 0.13);
+  background: rgba(250, 252, 253, 0.20);
+  box-shadow: 0 24px 36px rgba(16, 44, 62, 0.13);
 }
 
 .nav-shell {
