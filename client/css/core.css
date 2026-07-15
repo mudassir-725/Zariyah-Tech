@@ -25,8 +25,8 @@
   --c-footer-bg: var(--ink);
   --c-footer-text: var(--white);
   --c-footer-link: var(--sand);
-  --nav-height: 82px;
-  --nav-height-scrolled: 56px;
+  --nav-height: 64px;
+  --nav-height-scrolled: 48px;
 }
 
 *,
@@ -56,8 +56,8 @@ body {
 
 body.menu-open,
 body.dialog-open,
-body.auth-open,
-body.pricing-open {
+body.contact-open,
+body.feedback-open {
   overflow: hidden;
 }
 
@@ -140,7 +140,14 @@ ol {
 .password-toggle:focus-visible,
 .pricing-close:focus-visible,
 .price-action:focus-visible,
-.notice-close:focus-visible {
+.notice-close:focus-visible,
+.contact-close:focus-visible,
+.contact-clear:focus-visible,
+.service-select-toggle:focus-visible,
+.file-upload-button:focus-visible,
+.contact-send:focus-visible,
+.feedback-primary:focus-visible,
+.feedback-secondary:focus-visible {
   outline: 3px solid rgba(153, 88, 42, 0.34);
   outline-offset: 4px;
 }

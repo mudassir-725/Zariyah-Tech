@@ -28,16 +28,12 @@
   /* border: 1px solid rgba(255, 255, 255, 0.82); */
   border-radius: 26px;
   background:
-    radial-gradient(
-      circle at 24% 18%,
+    radial-gradient(circle at 24% 18%,
       rgba(255, 255, 255, 0.82),
-      transparent 42%
-    ),
-    linear-gradient(
-      145deg,
+      transparent 42%),
+    linear-gradient(145deg,
       rgba(171, 193, 194, 0.34),
-      rgba(235, 242, 250, 0.52)
-    );
+      rgba(235, 242, 250, 0.52));
   box-shadow:
     var(--shadow-md),
     inset 0 1px 0 rgba(255, 255, 255, 0.82);
@@ -63,7 +59,7 @@
   line-height: 1.14;
 }
 
-.quality-content > p {
+.quality-content>p {
   margin-top: 18px;
   color: rgba(26, 58, 79, 0.7);
   font-size: 15px;
@@ -98,7 +94,7 @@
   background: rgba(171, 193, 194, 0.18);
 }
 
-.process-card > span {
+.process-card>span {
   color: var(--bronze);
   font-family: var(--font-heading);
   font-size: 11px;

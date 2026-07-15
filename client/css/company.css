@@ -30,7 +30,7 @@
 
 .company-note {
   position: absolute;
-  right: -18px;
+  right: 16px;
   bottom: 28px;
   display: inline-flex;
   align-items: center;
@@ -44,6 +44,14 @@
   font-weight: 650;
   box-shadow: var(--shadow-sm);
   backdrop-filter: blur(14px);
+  transition: all 0.3s ease;
+}
+
+.company-note:hover {
+  cursor: pointer;
+  background: rgb(255, 255, 255);
+  border: 1px solid rgb(255, 255, 255);
+  letter-spacing: 1px;
 }
 
 .company-note::before {
@@ -64,7 +72,7 @@
   line-height: 1.14;
 }
 
-.company-content > p:not(.section-kicker) {
+.company-content>p:not(.section-kicker) {
   margin-top: 22px;
   color: rgba(26, 58, 79, 0.72);
   font-size: 16px;
@@ -87,6 +95,7 @@
 }
 
 @media (max-width: 520px) {
+
   .company-media,
   .company-video {
     min-height: 280px;

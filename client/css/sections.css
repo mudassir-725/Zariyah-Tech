@@ -75,6 +75,7 @@
   font-weight: 600;
   box-shadow: 0 6px 16px rgba(16, 44, 62, 0.05);
   transition:
+    all 0.3s ease,
     transform 180ms var(--ease),
     color 180ms var(--ease),
     background-color 180ms var(--ease),
@@ -92,6 +93,7 @@
   border-color: var(--ink);
   color: var(--white);
   background: var(--ink);
+  cursor: pointer;
 }
 
 .outcomes-list li:hover::before {
@@ -99,6 +101,7 @@
 }
 
 @media (max-width: 700px) {
+
   .page-section,
   .faq-section {
     padding: 68px 16px;

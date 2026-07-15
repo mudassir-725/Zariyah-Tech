@@ -101,7 +101,7 @@
 }
 
 .service-feature:hover .feature-media img {
-  transform: translateY(-4px);
+  transform: scale(1.085);
   filter: saturate(1.04);
 }
 
@@ -205,9 +205,19 @@
   font-weight: 700;
   letter-spacing: 0.04em;
   text-transform: uppercase;
+  transition: all 0.3s ease;
   box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.7);
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
+}
+
+.feature-meta span:hover {
+  color: rgb(26, 58, 79, 1);
+  background: rgb(255, 255, 255);
+  letter-spacing: 1px;
+  border: 1px solid rgb(255, 255, 255);
+  cursor: pointer;
+  transform: translateY(-6px);
 }
 
 /* =========================================================
@@ -243,7 +253,8 @@
 }
 
 .service-card:hover {
-  transform: translateY(-7px);
+  transform: translateY(-6px);
+  filter: saturate(1.04);
   border-color: rgba(153, 88, 42, 0.28);
   box-shadow:
     var(--shadow-md),
@@ -252,18 +263,11 @@
 
 .service-media {
   position: relative;
-  display: grid;
-  min-height: 176px;
-  max-height: 238px;
-  place-items: center;
   overflow: hidden;
+  aspect-ratio: 16 / 9;
   background:
-    radial-gradient(circle at 25% 16%,
-      rgba(255, 255, 255, 0.8),
-      transparent 40%),
-    linear-gradient(145deg,
-      rgba(171, 193, 194, 0.32),
-      rgba(235, 242, 250, 0.34));
+    radial-gradient(circle at 25% 16%, rgba(255, 255, 255, 0.8), transparent 40%),
+    linear-gradient(145deg, rgba(171, 193, 194, 0.32), rgba(235, 242, 250, 0.34));
 }
 
 .service-media::after {
@@ -275,18 +279,22 @@
 }
 
 .service-media img {
+  position: absolute;
+  inset: 0;
+  display: block;
   width: 100%;
-  height: auto;
-  max-height: 208px;
-  object-fit: contain;
-  box-shadow: 0 14px 34px rgba(16, 44, 62, 0.13);
+  height: 100%;
+  object-fit: cover;
+  object-position: 56% center;
+  transform: scale(1.065);
+  transform-origin: center;
   transition:
     transform 420ms var(--ease),
     filter 420ms var(--ease);
 }
 
 .service-card:hover .service-media img {
-  transform: translateY(-3px);
+  transform: scale(1.085);
   filter: saturate(1.04);
 }
 
