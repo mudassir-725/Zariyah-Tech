@@ -4,7 +4,7 @@
 .contact-dialog {
   width: min(calc(100% - 24px), 920px);
   max-height: min(94vh, 900px);
-  margin: auto;
+  margin: 16px auto;
   overflow: auto;
   border: 1px solid rgba(255, 255, 255, 0.76);
   border-radius: 30px;
@@ -112,7 +112,7 @@
   line-height: 1.08;
 }
 
-.contact-heading-copy > p:last-child {
+.contact-heading-copy>p:last-child {
   max-width: 650px;
   margin-top: 10px;
   color: rgba(26, 58, 79, 0.66);
@@ -168,7 +168,7 @@
   font-weight: 700;
 }
 
-.contact-field > input,
+.contact-field>input,
 .contact-input-shell,
 .service-select-toggle,
 .contact-composer {
@@ -184,13 +184,13 @@
     background-color 180ms var(--ease);
 }
 
-.contact-field > input,
+.contact-field>input,
 .contact-input-shell input,
 .service-select-toggle {
   min-height: 48px;
 }
 
-.contact-field > input,
+.contact-field>input,
 .contact-input-shell input {
   border: 0;
   outline: 0;
@@ -199,7 +199,7 @@
   background: transparent;
 }
 
-.contact-field > input {
+.contact-field>input {
   border: 1px solid rgba(26, 58, 79, 0.14);
   background: rgba(255, 255, 255, 0.64);
 }
@@ -209,7 +209,7 @@
   color: rgba(26, 58, 79, 0.38);
 }
 
-.contact-field > input:focus,
+.contact-field>input:focus,
 .contact-input-shell:focus-within,
 .service-select-toggle:focus-visible,
 .contact-composer:focus-within {
@@ -508,16 +508,18 @@
 }
 
 .contact-disclaimer {
-  color: rgba(26, 58, 79, 0.5);
-  font-size: 10px;
+  color: rgba(26, 58, 79, 0.7);
+  font-size: 12px;
   line-height: 1.55;
 }
 
 .contact-return {
   color: var(--bronze);
   font-family: var(--font-heading);
-  font-size: 12px;
-  font-weight: 750;
+  font-size: 14px;
+  /* font-weight: 750; */
+  letter-spacing: 1px;
+  text-align: center;
 }
 
 @media (max-width: 650px) {
