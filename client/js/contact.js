@@ -53,6 +53,19 @@ const fileToPayload = (file) =>
     reader.readAsDataURL(file);
   });
 
+// On Top of V1.77
+const openButtons = document.querySelectorAll("[data-contact-open]");
+
+openButtons.forEach((button) => {
+  button.addEventListener("click", (event) => {
+    event.preventDefault();
+
+    const mode = button.dataset.contactMode || "general";
+
+    openContactDialog(mode);
+  });
+});
+
 export function initContact() {
   const dialog = document.getElementById("contact-dialog");
   const form = document.getElementById("contact-form");

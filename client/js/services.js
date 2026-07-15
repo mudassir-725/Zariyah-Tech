@@ -394,6 +394,9 @@ export function initServices() {
 
     if (!trigger) return;
 
+    event.preventDefault();
+    event.stopPropagation();
+
     openDialog(trigger);
   });
 

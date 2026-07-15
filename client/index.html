@@ -409,15 +409,17 @@
               <span>Multilingual</span>
             </div>
             <button
+              href="javascript:void(0)"
               class="service-link service-trigger ripple-effect"
               data-service="dataAnnotation"
-              type="button"
             >
               Explore Data Annotation
+              <!-- type="button" -->
               <!-- <span aria-hidden="true">↗</span> -->
             </button>
           </div>
         </article>
+
         <!-- Supporting Services -->
         <div class="service-grid">
           <!-- Intelligence with AI -->
@@ -623,6 +625,7 @@
             </div>
           </article>
         </div>
+
         <!-- Service Details Dialog -->
         <dialog
           aria-labelledby="service-dialog-title"
@@ -668,7 +671,7 @@
                 your data, users, quality targets, timeline, and delivery
                 environment.
               </p>
-              <a
+              <button
                 aria-haspopup="dialog"
                 class="button button-primary ripple-effect dialog-contact"
                 data-contact-mode="project"
@@ -677,7 +680,7 @@
               >
                 Discuss This Service
                 <span aria-hidden="true">↗</span>
-              </a>
+              </button>
             </footer>
           </div>
         </dialog>
@@ -1153,18 +1156,24 @@
               data-driven insights.
             </p>
             <div class="footer-cta-row">
+              <!-- Footer CTA -->
               <a
                 id="discuss-project"
                 class="footer-cta ripple-effect"
-                href="#discuss-project-dialog"
+                href="#contact-dialog"
+                data-contact-open
+                data-contact-mode="project"
+                aria-haspopup="dialog"
               >
                 Discuss your Project
               </a>
+
               <a
-                class="footer-ghost ripple-effect"
                 id="write-a-mail"
-                href="#write-a-mail-dialog"
-                data-write-a-mail-open
+                class="footer-ghost ripple-effect"
+                href="#contact-dialog"
+                data-contact-open
+                data-contact-mode="general"
                 aria-haspopup="dialog"
               >
                 Write Us
